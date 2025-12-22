@@ -4,19 +4,47 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-  text-align: center;
+  padding: 0 5rem;
 }
 
-.hero-content h1 {
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Image styling */
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; /* circular */
+  object-fit:cover; 
+  border: 6px solid white;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+/* Text info styling */
+.hero-info {
+  max-width: 600px;
+}
+
+.hero-info h1 {
   font-size: 3rem;
   color: var(--accent-color);
+  margin-bottom: 1rem;
   animation: fadeIn 1s ease forwards;
 }
 
-.hero-content p {
+.hero-info p {
   font-size: 1.2rem;
-  margin: 1rem 0 2rem;
+  margin-bottom: 2rem;
   color: var(--text-color);
+  line-height: 1.6;
   animation: fadeIn 1.5s ease forwards;
 }
 
