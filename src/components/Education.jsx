@@ -17,7 +17,7 @@ function Education() {
 
     {/* Diploma */}
     <div className="education-card">
-      <h3>Marathwada Mitra Mandal Polytechnic</h3>
+      <h3>Marathwada Mitra Mandals Polytechnic</h3>
       <span className="edu-type">Diploma In Computer Enginnering</span>
       <p>Thergaon, Pune</p>
       <p>Successfully completed diploma</p>

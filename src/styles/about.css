@@ -10,6 +10,8 @@
   margin-bottom: 16px;
   color: var(--accent-color);
   position: relative;
+  animation: fadeIn 1s ease forwards;
+
 }
 
 #about h2::after {

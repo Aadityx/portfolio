@@ -36,7 +36,8 @@
 
 .skill-card:hover {
   transform: translateY(-5px);
-  background: #222;
+  box-shadow: 0 10px 30px #38bdf8;
+
 }
 
 /* Fade-in animation for text */
