@@ -6,23 +6,45 @@
 }
 
 .about-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
+  color: #fff;
+  padding: 3rem 1rem;
 }
 
-.about-container h2 {
-  font-size: 2.5rem;
+.about-columns {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap; /* stacks columns on small screens */
+}
+
+.about-left, .about-right {
+  flex: 1;
+  min-width: 300px; /* ensures readable on smaller screens */
+}
+
+.about-left h2, .about-right h2 {
+  font-size: 2rem;
   color: var(--accent-color);
   margin-bottom: 1rem;
-  animation: fadeIn 1s ease forwards;
 }
 
-.about-container p {
-  font-size: 1.2rem;
+.about-left p {
+  font-size: 1.1rem;
   line-height: 1.6;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
 }
+
+.education-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.education-list li {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+
 
 /* Fade-in animation */
 @keyframes fadeIn {

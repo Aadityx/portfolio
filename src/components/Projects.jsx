@@ -5,27 +5,32 @@ function Projects() {
     {
       title: "EcoMeter",
       description: "An electric vehicle range estimation platform built with HTML, CSS, JS.",
-      link: "#"
+      link: "https://github.com/Aadityx/EcoMeter"
+    },
+    {
+      title: "Nitroxx - Ecommerce Website",
+      description: "An electric vehicle range estimation platform built with HTML, CSS, JS.",
+      link: "https://github.com/Aadityx/Nitroxx"
     },
     {
       title: "Portfolio Website",
       description: "My personal portfolio website showcasing projects and skills.",
-      link: "#"
+      link: "https://github.com/Aadityx/Portfolio"
     },
     {
       title: "Task Manager",
       description: "A web app for managing daily tasks with CRUD functionality.",
-      link: "#"
+      link: "https://github.com/Aadityx"
     },
     {
       title: "Weather App",
       description: "Fetches real-time weather data using API and displays it.",
-      link: "#"
+      link: "https://github.com/Aadityx"
     },
     {
       title: "Blog Platform",
       description: "A simple blogging platform with authentication and posts.",
-      link: "#"
+      link: "https://github.com/Aadityx"
     }
   ];
 
