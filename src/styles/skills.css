@@ -1,6 +1,6 @@
 .skills {
   padding: 5rem 2rem;
-  background: #1a1a1a; /* dark theme */
+  background: #111; /* dark theme */
   color: #fff;
   text-align: center;
 }
@@ -25,12 +25,12 @@
 }
 
 .skill-card {
-  background: #111;
+  background: #1a1a1a;
   padding: 1rem 2rem;
   border-radius: 10px;
   font-weight: bold;
   min-width: 120px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease,  0.3s ease;
   cursor: default;
 }
 

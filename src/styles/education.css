@@ -1,0 +1,46 @@
+.education-section {
+ padding: 5rem 2rem;
+  background: #111; /* dark theme */
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.education-section h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease forwards;
+}
+
+.education-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.education-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+.education-card h3 {
+  margin-bottom: 8px;
+}
+
+.edu-type {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #00ffd5;
+  margin-bottom: 10px;
+}

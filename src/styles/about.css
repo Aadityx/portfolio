@@ -1,49 +1,35 @@
-.about {
-  padding: 5rem 2rem;
-  background: #111; /* dark theme */
-  color: #fff;
-  text-align: center;
-}
-
-.about-container {
-  max-width: 1000px;
+/* About Section */
+#about {
+  padding: 60px 20px;
+  max-width: 900px;
   margin: 0 auto;
-  color: #fff;
-  padding: 3rem 1rem;
 }
 
-.about-columns {
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap; /* stacks columns on small screens */
-}
-
-.about-left, .about-right {
-  flex: 1;
-  min-width: 300px; /* ensures readable on smaller screens */
-}
-
-.about-left h2, .about-right h2 {
-  font-size: 2rem;
+#about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
   color: var(--accent-color);
-  margin-bottom: 1rem;
+  position: relative;
 }
 
-.about-left p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+#about h2::after {
+  content: "";
+  width: 80%;
+  height: 3px;
+  background: white;
+  display: block;
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-right:10%;
+  border-radius: 2px;
 }
 
-.education-list {
-  list-style: none;
-  padding-left: 0;
+#about p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: white;
+  margin-top: 12px;
 }
-
-.education-list li {
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
-}
-
 
 
 /* Fade-in animation */

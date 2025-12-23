@@ -3,25 +3,27 @@ import '../styles/contact.css';
 
 function Contact() {
   return (
-    <section className="contact" id="contact">
-      <div className="contact-container">
-        <h2>Contact Me</h2>
-        <p>If you want to get in touch, feel free to send a message!</p>
-        
-        <form className="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit" className="btn">Send Message</button>
-        </form>
+    <section id="contact" className="contact-section">
+  <h2>Contact Me</h2>
 
-        <div className="contact-links">
-          <a href="mailto:your.email@example.com">Email</a>
-          <a href="https://github.com/Aadityx" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
-    </section>
+  <div className="contact-card">
+    <div className="contact-item">
+      <span className="contact-label">Email</span>
+      <span className="contact-value">aadityasp.26@gmail.com</span>
+    </div>
+
+    <div className="contact-item">
+      <span className="contact-label">LinkedIn</span>
+      <span className="contact-value">aadityx2607</span>
+    </div>
+
+    <div className="contact-item">
+      <span className="contact-label">GitHub</span>
+      <span className="contact-value">github.com/Aadityx</span>
+    </div>
+  </div>
+</section>
+
   );
 }
 
