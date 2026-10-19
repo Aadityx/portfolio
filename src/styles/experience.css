@@ -113,6 +113,18 @@
   color: var(--accent-cyan);
 }
 
+.experience-org-link {
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.experience-org-link:hover {
+  color: var(--accent-cyan-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .exp-duration-badge {
   display: inline-flex;
   align-items: center;

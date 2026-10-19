@@ -1,4 +1,4 @@
-import { Briefcase, Calendar, Building2 } from 'lucide-react';
+import { Briefcase, Calendar, Building2, ExternalLink } from 'lucide-react';
 import '../styles/experience.css';
 
 function Experience() {
@@ -7,9 +7,10 @@ function Experience() {
       role: "Web Developer Volunteer",
       org: "Jan Kalyan Trust",
       duration: "April 2026 – Jul 2026",
-      isCurrent: false,
+      isCurrent: true,
+      link: "https://jankalyantrustmahad.org/",
       description: "Developed a 10-page responsive website for Jan Kalyan Trust, a non-profit organization, to enhance its digital presence and accessibility. Designed user-friendly interfaces and implemented responsive layouts to ensure a seamless browsing experience across devices. Currently contributing to ongoing website maintenance and updates.",
-     skills: ["HTML", "CSS", "JavaScript", "UI Optimization"]
+      skills: ["HTML", "CSS", "JavaScript", "UI Optimization"]
     },
     {
       role: "Full-Stack Web Developer",
@@ -53,7 +54,20 @@ function Experience() {
                     <h3 className="exp-role">{exp.role}</h3>
                     <div className="exp-org-wrap">
                       <Building2 size={16} className="exp-icon" />
-                      <span className="experience-org">{exp.org}</span>
+                      {exp.link ? (
+                        <a
+                          href={exp.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="experience-org experience-org-link"
+                          title={`Visit ${exp.org} website`}
+                        >
+                          <span>{exp.org}</span>
+                          <ExternalLink size={13} style={{ marginLeft: 4, display: 'inline-block' }} />
+                        </a>
+                      ) : (
+                        <span className="experience-org">{exp.org}</span>
+                      )}
                     </div>
                   </div>
 

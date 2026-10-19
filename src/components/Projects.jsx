@@ -6,7 +6,10 @@ import {
   ShoppingBag,
   User,
   CheckSquare,
-  TrendingUp
+  TrendingUp,
+  Heart,
+  ShoppingCart,
+  Globe
 } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import '../styles/projects.css';
@@ -16,6 +19,8 @@ function ProjectCard({ project, index }) {
   const cardRef = useRef(null);
   const [transform, setTransform] = useState('');
   const [glarePosition, setGlarePosition] = useState({ x: 50, y: 50, opacity: 0 });
+
+  const isGitHub = project.link && project.link.includes('github.com');
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -61,7 +66,9 @@ function ProjectCard({ project, index }) {
 
       {/* Top Meta Bar */}
       <div className="project-top-row">
-        <span className="project-number">0{index + 1}</span>
+        <span className="project-number">
+          {index + 1 < 10 ? `0${index + 1}` : index + 1}
+        </span>
         <div className="project-category-tag">
           {project.icon}
           <span>{project.tag}</span>
@@ -100,9 +107,10 @@ function ProjectCard({ project, index }) {
           target="_blank"
           rel="noopener noreferrer"
           className="project-github-btn"
-          aria-label={`View ${project.title} source on GitHub`}
+          aria-label={isGitHub ? `View ${project.title} source on GitHub` : `Visit ${project.title} live website`}
+          title={isGitHub ? 'GitHub Repository' : 'Live Website'}
         >
-          <GithubIcon size={18} />
+          {isGitHub ? <GithubIcon size={18} /> : <Globe size={18} />}
         </a>
       </div>
     </div>
