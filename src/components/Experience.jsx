@@ -4,10 +4,18 @@ import '../styles/experience.css';
 function Experience() {
   const experiences = [
     {
+      role: "Web Developer Volunteer",
+      org: "Jan Kalyan Trust",
+      duration: "April 2026 – Jul 2026",
+      isCurrent: false,
+      description: "Developed a 10-page responsive website for Jan Kalyan Trust, a non-profit organization, to enhance its digital presence and accessibility. Designed user-friendly interfaces and implemented responsive layouts to ensure a seamless browsing experience across devices. Currently contributing to ongoing website maintenance and updates.",
+     skills: ["HTML", "CSS", "JavaScript", "UI Optimization"]
+    },
+    {
       role: "Full-Stack Web Developer",
       org: "Spark IIT",
-      duration: "Sept 2024 – Present",
-      isCurrent: true,
+      duration: "Oct 2024 – Jan 2026",
+      isCurrent: false,
       description: "Deep dived into web development by learning modern technologies such as React.js, JavaScript, Node.js, and MongoDB. Worked extensively on personal projects to implement these concepts, improve problem-solving skills, and build responsive, user-friendly web applications.",
       skills: ["React.js", "JavaScript", "Node.js", "MongoDB", "Web Development"]
     },

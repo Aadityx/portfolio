@@ -1,12 +1,12 @@
 import { useState, useRef } from 'react';
-import { 
-  ExternalLink, 
-  ArrowUpRight, 
-  Zap, 
-  ShoppingBag, 
-  User, 
-  CheckSquare, 
-  TrendingUp 
+import {
+  ExternalLink,
+  ArrowUpRight,
+  Zap,
+  ShoppingBag,
+  User,
+  CheckSquare,
+  TrendingUp
 } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import '../styles/projects.css';
@@ -22,10 +22,10 @@ function ProjectCard({ project, index }) {
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    
+
     // Rotate limits
     const rotateX = -((y - centerY) / centerY) * 10;
     const rotateY = ((x - centerX) / centerX) * 10;
@@ -112,6 +112,14 @@ function ProjectCard({ project, index }) {
 function Projects() {
   const projects = [
     {
+      title: "Jan Kalyan Trust",
+      description: "Developed a responsive 10-page website for a non-profit organization to enhance its digital presence, showcase its initiatives, and improve accessibility.",
+      link: "https://jankalyantrustmahad.org/",
+      tag: "NGO Website",
+      icon: <Heart size={15} className="tag-icon" />,
+      tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "Web Development"]
+    },
+    {
       title: "EcoMeter",
       description: "An electric vehicle range estimation platform built using HTML, CSS, and JavaScript.",
       link: "https://github.com/Aadityx/EcoMeter",
@@ -134,6 +142,14 @@ function Projects() {
       tag: "Portfolio",
       icon: <User size={15} className="tag-icon" />,
       tags: ["React", "UI/UX", "Modern Web", "Interactive Design"]
+    },
+    {
+      title: "NovaMarket",
+      description: "A full-stack MERN e-commerce platform featuring secure authentication, product browsing, shopping cart, order processing, and administrative controls.",
+      link: "https://github.com/Aadityx/NovaMarket",
+      tag: "E-Commerce",
+      icon: <ShoppingCart size={15} className="tag-icon" />,
+      tags: ["React", "Node.js", "Express.js", "MongoDB", "JWT Authentication"]
     },
     {
       title: "TaskTracker",
