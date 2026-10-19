@@ -16,19 +16,6 @@ function Hero() {
       <div className="container hero-container">
         {/* Left Column: Clean Editorial Introduction & CTAs */}
         <div className="hero-info">
-          {/* Author Badge & Status */}
-          <div className="hero-author-pill">
-            <div className="author-avatar-wrap">
-              <img src={myPhoto} alt="Aaditya" className="author-avatar" />
-              <span className="author-pulse-dot" />
-            </div>
-            <div className="author-meta">
-              <span className="author-name">Aaditya</span>
-              <span className="author-sep">•</span>
-              <span className="author-status">Open to opportunities</span>
-            </div>
-          </div>
-
           <div className="hero-heading-group">
             <span className="hero-subheading">Full-Stack Web Developer</span>
             <h1 className="hero-title">
