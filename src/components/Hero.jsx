@@ -1,4 +1,4 @@
-import { useState, useRef, lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { ArrowDownRight, Sparkles, Send, Code, Layers } from 'lucide-react';
 import '../styles/hero.css';
 import myPhoto from '../assets/pfp.jpeg';
@@ -6,24 +6,6 @@ import myPhoto from '../assets/pfp.jpeg';
 const Hero3DCanvas = lazy(() => import('./Hero3DCanvas'));
 
 function Hero() {
-  const [cardTransform, setCardTransform] = useState('');
-  const photoCardRef = useRef(null);
-
-  // Subtle 3D tilt interaction for the profile card
-  const handleMouseMove = (e) => {
-    if (!photoCardRef.current) return;
-    const rect = photoCardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    const rotateX = (-y / rect.height) * 15;
-    const rotateY = (x / rect.width) * 15;
-    setCardTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`);
-  };
-
-  const handleMouseLeave = () => {
-    setCardTransform('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)');
-  };
-
   return (
     <section className="hero" id="hero">
       <div className="hero-background-fx">
@@ -32,17 +14,27 @@ function Hero() {
       </div>
 
       <div className="container hero-container">
-        {/* Left Column: Editorial Introduction & CTAs */}
+        {/* Left Column: Clean Editorial Introduction & CTAs */}
         <div className="hero-info">
-          <div className="hero-badge">
-            <span className="hero-badge-dot" />
-            <Sparkles size={13} className="hero-badge-icon" />
-            <span>Aspiring Full Stack Developer</span>
+          {/* Author Badge & Status */}
+          <div className="hero-author-pill">
+            <div className="author-avatar-wrap">
+              <img src={myPhoto} alt="Aaditya" className="author-avatar" />
+              <span className="author-pulse-dot" />
+            </div>
+            <div className="author-meta">
+              <span className="author-name">Aaditya</span>
+              <span className="author-sep">•</span>
+              <span className="author-status">Open to opportunities</span>
+            </div>
           </div>
 
-          <h1 className="hero-title">
-            Hi, I'm <span className="gradient-text">Aaditya</span>
-          </h1>
+          <div className="hero-heading-group">
+            <span className="hero-subheading">Full-Stack Web Developer</span>
+            <h1 className="hero-title">
+              Hi, I'm <span className="gradient-text">Aaditya</span>
+            </h1>
+          </div>
 
           <p className="hero-description">
             I am an aspiring full stack developer passionate about developing modern, responsive, 
@@ -61,7 +53,7 @@ function Hero() {
             </a>
           </div>
 
-          {/* Quick Specialization Highlights */}
+          {/* Specialization Highlights */}
           <div className="hero-highlights">
             <div className="highlight-item">
               <Code size={16} className="highlight-icon" />
@@ -74,8 +66,9 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Column: Interactive 3D Showcase & Profile Image */}
+        {/* Right Column: Unobstructed 3D Globe Centerpiece */}
         <div className="hero-visual">
+          <div className="hero-globe-aura" />
           <div className="hero-3d-wrapper">
             <Suspense fallback={
               <div className="hero-3d-fallback">
@@ -85,25 +78,6 @@ function Hero() {
             }>
               <Hero3DCanvas />
             </Suspense>
-          </div>
-
-          {/* Luxury Profile Capsule */}
-          <div
-            ref={photoCardRef}
-            className="hero-profile-card glass-panel"
-            style={{ transform: cardTransform }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="hero-image">
-              <img src={myPhoto} alt="Aadityx" />
-              <div className="image-specular-glare" />
-            </div>
-
-            <div className="profile-tag">
-              <span className="profile-name">Aadityx</span>
-              <span className="profile-role">Web Developer</span>
-            </div>
           </div>
         </div>
       </div>
