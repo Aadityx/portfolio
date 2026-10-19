@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Education from './components/Education'
-import Experience from './components/Experience'
-
+import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import AmbientBackground from './components/AmbientBackground';
 
 function App() {
   return (
-    <>
+    <div className="app-container">
+      <AmbientBackground />
       <Navbar />
-      <div style={{ paddingTop: '80px' }}>
+      <main className="main-content">
         <Hero />
         <About />
         <Education />
-        <Experience/>
+        <Experience />
         <Skills />
         <Projects />
         <Contact />
-      </div>
-    </>
-  )
+      </main>
+    </div>
+  );
 }
 
-export default App
-
+export default App;

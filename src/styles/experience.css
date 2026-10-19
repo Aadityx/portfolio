@@ -1,58 +1,186 @@
 .experience-section {
-  padding: 5rem 2rem;
-  background: #1a1a1a; /* dark theme */
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  position: relative;
 }
 
-.experience-container {
-  max-width: 1000px;
+.experience-timeline {
+  max-width: 860px;
   margin: 0 auto;
+  position: relative;
 }
 
-.experience-section h2 {
-  font-size: 2.5rem;
-  color: var(--accent-color);
-  margin-bottom: 2rem;
-  animation: fadeIn 1s ease forwards;
+.timeline-spine {
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-cyan), rgba(56, 189, 248, 0.1));
 }
+
+.experience-timeline-item {
+  position: relative;
+  padding-left: 55px;
+  margin-bottom: 2.5rem;
+}
+
+.experience-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-node {
+  position: absolute;
+  left: 11px;
+  top: 2rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all var(--transition-normal);
+}
+
+.node-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: all var(--transition-normal);
+}
+
+.current-item .timeline-node {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.6);
+}
+
+.current-item .node-dot {
+  background: var(--accent-cyan);
+}
+
 .experience-card {
-  background: #111;
-  border-radius: 14px;
-  padding: 24px;
-  margin:20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2.25rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .experience-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 30px #38bdf8;
+  border-color: rgba(56, 189, 248, 0.4);
 }
 
-.experience-card h3 {
-  font-size: 1.3rem;
-  color: #ffffff;
-  margin-bottom: 6px;
+.exp-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exp-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.exp-role {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.exp-org-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.exp-icon {
+  color: var(--accent-cyan);
 }
 
 .experience-org {
-  display: block;
-  color: #00ffd5;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.experience-duration {
-  display: block;
-  font-size: 0.9rem;
-  color: #9a9a9a;
-  margin-bottom: 14px;
-}
-
-.experience-card p {
-  color: #cfcfcf;
-  line-height: 1.6;
+  font-family: var(--font-display);
   font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
 }
 
+.exp-duration-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.current-item .exp-duration-badge {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: var(--accent-cyan-light);
+}
+
+.exp-description {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.exp-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.exp-tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.experience-card:hover .exp-tech-tag {
+  border-color: rgba(56, 189, 248, 0.2);
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .experience-timeline-item {
+    padding-left: 35px;
+  }
+
+  .timeline-spine {
+    left: 10px;
+  }
+
+  .timeline-node {
+    left: 1px;
+    top: 1.5rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .exp-role {
+    font-size: 1.15rem;
+  }
+}
