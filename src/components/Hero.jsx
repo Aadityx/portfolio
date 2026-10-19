@@ -1,7 +1,7 @@
 import { useState, useRef, lazy, Suspense } from 'react';
 import { ArrowDownRight, Sparkles, Send, Code, Layers } from 'lucide-react';
 import '../styles/hero.css';
-import myPhoto from '../assets/pfp.JPG';
+import myPhoto from '../assets/pfp.jpeg';
 
 const Hero3DCanvas = lazy(() => import('./Hero3DCanvas'));
 
